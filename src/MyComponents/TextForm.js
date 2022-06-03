@@ -31,20 +31,35 @@ export default function TextForm(props) {
             let newText = text;
             //  console.log(newText);
         }
+        props.shwoAlert('Dopy the text');
+
     }
     const handleUpClick = () => {
         // console.log("Uppercase converts",text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.shwoAlert('Converted to in uppercase');
+
+    }
+    const handleCapitialze = (word) => {
+        // console.log("Uppercase converts",text);
+        const lower = word.toLowerCase();
+        return lower.charAt(0).toUpperCase()+lower.slice();
+        // props.shwoAlert('Converted to in capitialze');
+
+        
     }
     const handleLoClick = () => {
         // console.log("Uppercase converts",text);
         let newText = text.toLowerCase();
         setText(newText);
+        props.shwoAlert('Converted to in lowercase');
+
     }
     const handleOnChange = (event) => {
         // console.log("Uppercase not converts");
         setText(event.target.value);
+        props.shwoAlert('Converted to in it');
     }
     const [text, setText] = useState("");
     // setText = "Enter your clagss";
@@ -57,6 +72,7 @@ export default function TextForm(props) {
                     <textarea className="form-control" style={{background:props.mode==='dark'?'light':'gray',color:props.mode==='dark'?'white':'black'}} value={text} onChange={handleOnChange} id="myPop" rows="7" ></textarea>
                 </div>
                 <button className="btn btn-primary mx-3 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button className="btn btn-primary mx-3 my-2" onClick={handleCapitialze}>Convert to Capitialze</button>
                 <button className="btn btn-primary my-2" onClick={handleLoClick}>Convert to Lowercase</button>
                 <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy</button>
                 <button className="btn btn-primary mx-2" onClick={handleColChange}>{btnText}</button>

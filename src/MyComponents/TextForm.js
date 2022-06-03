@@ -79,7 +79,7 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
                 <h2>Your Text Summary</h2>
-                <p>{text.split(' ').length} words {text.length} charachters</p>
+                <p>{(text.split(' ').length)} words {text.length} charachters</p>
                 <p>{0.0008 * text.split(' ').length} reading times</p>
                 <h2>Preview Text</h2>
                 <p>{text.length>0?text:"Enter in the textareat for word wrapping"}</p>

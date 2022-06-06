@@ -1,20 +1,14 @@
 // import logo from './logo.svg';
 // import './App2.css';
 
-import { useState } from "react";
+import React, { useState } from "react"
 
-import Navbar from "./MyComponents/Navbar";
-import TextForm from "./MyComponents/TextForm";
-import Alert from "./MyComponents/Alert";
-import About from "./MyComponents/About";
+import Navbar from "./MyComponents/Navbar"
+import TextForm from "./MyComponents/TextForm"
+import Alert from "./MyComponents/Alert"
+import About from "./MyComponents/About"
 
-// router links inserted here 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"; 
+
 
 // let name = "Harry";
 function App() {
@@ -51,32 +45,21 @@ function App() {
 
   return (
     <>
-     <Router>
-      <Navbar title="TextUtils" aboutText="AboutUs" mode={mode} toggleMode={toggleMode} />
-      {/* <Alert alert= "This is alert"/> */}
-      <Alert alert={alert} />
-      {/* inserted the switeches  */}
-      <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          {/* <Route path="/users">
-            <Users />
-          </Route> */}
-          <Route path="/">
-            <TextForm heading="Enter the text for analyze" mode={mode} showAlert={showAlert} />
-          </Route>
-        </Switch>
+      
 
+        <Navbar title="TextUtils" aboutText="AboutUs" mode={mode} toggleMode={toggleMode} />
+        {/* <Alert alert= "This is alert"/> */}
+        <Alert alert={alert} />
 
-      {/* <div className="container">
-        <TextForm heading="Enter the text for analyze" mode={mode} showAlert={showAlert} />
-      </div> */}
+        {/* inserted the switeches  */}
+        <div className="container my-2">
 
-      {/* about page randering  */}
-      <About/>
+         <TextForm heading="Enter the text for analyze" mode={mode} showAlert={showAlert} />
+        
 
-      </Router>
+        </div>
+     
+
     </>
   );
 }
